@@ -1,0 +1,19 @@
+@use '../abstracts/mixins' as *;
+
+// MAIN CONTAINERS
+.main-container {
+  @include mediumLargeScreens {
+    max-width: 160rem;
+    margin: 0 auto;
+  }
+}
+
+.page-content {
+  background-color: #fff;
+}
+
+.container--margin {
+  margin-left: 8.3vw;
+  margin-right: 8.3vw;
+  margin-bottom: 8.3vw;
+}

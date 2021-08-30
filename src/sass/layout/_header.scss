@@ -1,0 +1,23 @@
+@use '../abstracts/mixins' as *;
+
+//HERO
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-image: url('../../assets/ableton-hero.jpg');
+}
+
+.hero__text {
+  width: 21.5rem;
+  height: 5.2rem;
+
+  @include tabletScreens {
+    width: 43rem;
+    height: 10.4rem;
+  }
+}

@@ -1,0 +1,29 @@
+@mixin smallScreens {
+  @media (min-width: 30em) {
+    @content;
+  }
+}
+
+@mixin tabletScreens {
+  @media (min-width: 48em) {
+    @content;
+  }
+}
+
+@mixin mediumScreens {
+  @media (min-width: 50em) {
+    @content;
+  }
+}
+
+@mixin mediumLargeScreens {
+  @media (min-width: 64em) {
+    @content;
+  }
+}
+
+@mixin largeScreens {
+  @media (min-width: 75em) {
+    @content;
+  }
+}
