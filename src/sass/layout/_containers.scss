@@ -17,3 +17,28 @@
   margin-right: 8.3vw;
   margin-bottom: 8.3vw;
 }
+
+.text-content {
+  @include tabletScreens {
+    margin-left: 0;
+    margin-right: 0;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.text-wrapper {
+  @include tabletScreens {
+    margin-left: 0;
+    margin-right: 0;
+    width: 66.6vw;
+  }
+
+  @include mediumLargeScreens {
+    width: 50vw;
+  }
+
+  @include largeScreens {
+    width: 80rem;
+  }
+}

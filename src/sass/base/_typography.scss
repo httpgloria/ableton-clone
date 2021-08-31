@@ -1,0 +1,43 @@
+@use '../abstracts/mixins' as *;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  line-height: 1.5;
+
+  @include mediumLargeScreens {
+    font-weight: 500;
+  }
+}
+
+p {
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+a,
+a:visited {
+  color: blue;
+  text-decoration: none;
+}
+
+.text-wrapper {
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 1.4rem;
+
+    @include mediumLargeScreens {
+      font-size: 3rem;
+    }
+  }
+
+  p {
+    @include mediumLargeScreens {
+      font-size: 2rem;
+    }
+  }
+}
