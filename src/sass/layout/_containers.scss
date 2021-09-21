@@ -28,6 +28,9 @@
 }
 
 .text-wrapper {
+  img {
+    width: 100%;
+  }
   @include tabletScreens {
     margin-left: 0;
     margin-right: 0;
@@ -40,5 +43,11 @@
 
   @include largeScreens {
     width: 80rem;
+  }
+}
+
+.full-size-image {
+  img {
+    width: 100%;
   }
 }
