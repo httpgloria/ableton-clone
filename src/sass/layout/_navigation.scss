@@ -1,82 +1,204 @@
 @use '../abstracts' as *;
 @use '../abstracts/mixins' as *;
 
+.header {
+  background-color: #fff;
+  border-bottom: 0.2rem solid $light-gray;
+}
+
 .nav {
-  background-color: $blue;
-  padding: 2rem;
   display: flex;
   align-items: center;
   gap: 3rem;
+  @include mediumLargeScreens {
+    align-items: flex-start;
+  }
 
   &__logo {
+    z-index: 1;
     width: 6rem;
+    margin-left: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    @include mediumLargeScreens {
+      position: absolute;
+      margin-bottom: 0;
+    }
   }
-
   &__menu {
+    z-index: 1;
     font-size: 2rem;
-    color: #fff;
+    color: #000;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    user-select: none;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    @include mediumLargeScreens {
+      display: none;
+    }
   }
 
-  &__container {
+  &__menu.light {
     color: #fff;
-    padding: 2rem 0rem 0rem 2rem;
-    position: absolute;
-    top: 6.8rem;
-    left: 0;
-    width: 100%;
-    background-color: $blue;
-  }
-
-  &__heading {
-    font-size: 2rem;
-    font-weight: 500;
-    margin-bottom: 1.5rem;
   }
 }
 
-.nav__item {
-  margin-bottom: 2rem;
-
-  .nav__link {
-    font-size: 2rem;
-    color: #fff;
+.links {
+  position: absolute;
+  top: 0rem;
+  width: 100%;
+  background: $blue;
+  padding: 8rem 0rem 0 2rem;
+  transform: translateY(-100%);
+  transition: all 0.5s ease;
+  @include mediumLargeScreens {
+    position: static;
+    background: white;
+    padding: 2rem 2rem 0 2rem;
+    transform: translateY(0);
   }
 
-  .nav__link.login {
-    font-size: 1.4rem;
-  }
-}
-
-.nav__more {
-  &__items--flex {
-    display: grid;
-    grid-template-columns: repeat(4, 20rem);
-    gap: 2rem;
-    overflow-x: scroll;
+  &__primary {
+    @include mediumLargeScreens {
+      padding-left: 10rem;
+      display: flex;
+      justify-content: space-between;
+    }
   }
 
-  &__items--flex::after {
+  &__more {
+    @include mediumLargeScreens {
+      display: none;
+    }
+  }
+
+  &__more.more-open {
+    display: block;
+  }
+
+  &__ &__more::after {
     content: '';
     display: block;
     position: absolute;
-    bottom: 0;
+    top: 0;
     right: 0;
     bottom: 2rem;
-    height: 11rem;
-    width: 10rem;
-    background: linear-gradient(90deg, rgba(0, 0, 0, 0) 50%, $blue);
+    width: 2.5rem;
+    background-image: linear-gradient(90deg, rgba(0, 0, 255, 0), blue);
+    @include mediumLargeScreens {
+      display: none;
+    }
   }
 
-  &__item {
-    margin-bottom: 1.5rem;
+  &__items {
+    list-style: none;
 
-    .nav__more__link {
-      color: #fff;
-      font-size: 1.4rem;
+    &--grid {
+      display: grid;
+      grid-template-columns: repeat(4, 20rem);
+      overflow-x: scroll;
+
+      li:not(:first-child) {
+        padding: 0 1.5rem 0 1.5rem;
+      }
+
+      @include mediumLargeScreens {
+        display: flex;
+        gap: 4rem;
+        overflow-x: hidden;
+      }
     }
 
-    .nav__more__link--red {
+    &__more {
+      @include mediumLargeScreens {
+        display: flex;
+        gap: 3rem;
+      }
+    }
+
+    &__primary {
+      @include mediumLargeScreens {
+        display: flex;
+        gap: 3rem;
+      }
+    }
+
+    li {
+      margin-bottom: 2rem;
+    }
+
+    .links__small-margin {
+      margin-bottom: 1.5rem;
+    }
+
+    a {
+      color: #fff;
+      font-size: 2rem;
+      font-weight: 500;
+      @include mediumLargeScreens {
+        color: #000;
+      }
+    }
+
+    .font--small {
+      font-size: 1.4rem;
+      font-weight: 400;
+      @include mediumLargeScreens {
+        font-size: 1.6rem;
+        font-weight: 300;
+      }
+    }
+
+    .font--small--login {
+      @include mediumLargeScreens {
+        font-weight: 400;
+      }
+    }
+
+    .links__smaller-heading {
+      font-weight: 500;
+    }
+
+    .font--red {
       color: $red;
     }
+
+    .font--blue {
+      @include mediumLargeScreens {
+        color: $blue;
+      }
+    }
+  }
+
+  &__login {
+    @include mediumLargeScreens {
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+    }
+  }
+
+  &__heading {
+    color: #fff;
+    margin-bottom: 1.5rem;
+    @include mediumLargeScreens {
+      font-size: 2.4rem;
+      color: #000;
+      margin-bottom: 0.8rem;
+    }
+  }
+}
+
+.links.open {
+  transform: translateY(0);
+}
+
+.more-toggle {
+  display: none;
+  cursor: pointer;
+  user-select: none;
+  @include mediumLargeScreens {
+    display: block;
   }
 }
