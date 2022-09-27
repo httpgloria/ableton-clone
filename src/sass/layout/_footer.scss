@@ -1,0 +1,144 @@
+@use '../abstracts' as *;
+@use '../abstracts/mixins' as *;
+
+.footer {
+  padding: 8.3vw 0 8.3vw 0;
+  margin-bottom: 0;
+  &__logo {
+    width: 18.8rem;
+    margin-bottom: 6.6rem;
+  }
+
+  &__link {
+    list-style: none;
+    margin-bottom: 0.5rem;
+
+    &--small {
+      margin-bottom: 1.5rem;
+      list-style: none;
+
+      @include mediumLargeScreens {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &-text--style {
+    color: #000;
+    font-size: 1.4rem;
+    font-weight: 300;
+
+    @include largeScreens {
+      font-size: 2rem;
+    }
+
+    &--small {
+      color: #000;
+      font-size: 1.4rem;
+    }
+  }
+
+  &__social__icons {
+    display: flex;
+    gap: 1rem;
+  }
+
+  &__heading {
+    font-size: 2rem;
+    margin-bottom: 0.6rem;
+  }
+
+  &__grid {
+    @include mediumLargeScreens {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+    }
+
+    & > * {
+      margin-bottom: 2rem;
+
+      @include largeScreens {
+        margin-bottom: 7rem;
+      }
+    }
+  }
+
+  &__newsletter__p {
+    margin-bottom: 1rem;
+  }
+
+  &__form-group {
+    width: 100%;
+    display: flex;
+    flex: 1;
+  }
+
+  &__form__input {
+    font-family: 'Futura PT', sans-serif;
+    padding: 0.8rem 1.5rem;
+    font-size: 1.4rem;
+    border: none;
+    background-color: $light-gray;
+    flex-grow: 2;
+
+    @include largeScreens {
+      font-size: 2rem;
+    }
+  }
+
+  &__button {
+    font-family: 'Futura PT', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 500;
+    padding: 0.7rem 2rem;
+    background-color: $blue;
+    border: none;
+    color: #fff;
+
+    @include largeScreens {
+      font-size: 2rem;
+    }
+  }
+
+  &__bottom-bar {
+    @include mediumLargeScreens {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__bottom-list {
+    @include mediumLargeScreens {
+      display: flex;
+      gap: 2rem;
+    }
+  }
+
+  &__bottom-logo {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+}
+
+.social-icon {
+  width: 4rem;
+  height: 4rem;
+}
+
+.facebook {
+  background: $facebook;
+}
+
+.twitter {
+  background: $twitter;
+}
+
+.youtube {
+  background: $youtube;
+}
+
+.instagram {
+  background: $instagram;
+}

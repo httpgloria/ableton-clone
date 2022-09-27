@@ -23,7 +23,7 @@
 }
 
 @mixin largeScreens {
-  @media (min-width: 75em) {
+  @media (min-width: 77em) {
     @content;
   }
 }

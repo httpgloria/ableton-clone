@@ -19,6 +19,10 @@ body {
   overflow-x: hidden;
 }
 
+hr {
+  border: $light-gray 1px solid;
+}
+
 .lemonade-bg {
   width: 100%;
   height: 100%;

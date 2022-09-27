@@ -6,6 +6,3 @@ const more = document.querySelector('.more-toggle');
 
 menu.addEventListener('click', navbar);
 more.addEventListener('click', moreToggle);
-
-navbar();
-moreToggle();
